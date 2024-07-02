@@ -14,8 +14,10 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
-    cities = ['dresden', 'leipzig', 'hamburg', 'Frankfurt am Main', 'Hannover', 'Berlin', 'Muenchen','Paris', 'London']
-    for city in cities[2:4]:
-        coords = buildings_map.create_buildings_map(city)
-        print(coords)
+    cities = ['dresden', 'Berlin','leipzig', 'hamburg', 'Hannover', 'Muenchen','Paris', 'London']
+    with open("data/city_coords.txt", 'w') as f:
+        for city in cities:
+            coords = buildings_map.create_buildings_map(city)
+            f.write(city + " " + str(coords) + "\n")
+            print(coords)
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
